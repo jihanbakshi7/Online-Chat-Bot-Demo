@@ -2,47 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/vite.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recommendation Letter Generator</title>
+    <title>Recomendation Letter Chatbot</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-gray-100 min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="bg-gemDeep text-white p-4 flex items-center justify-between shadow-md">
-      <div class="flex items-center gap-3">
-        <img src="chat-bot.jpg" alt="Chatbot Icon" class="w-10 h-10 rounded-full" />
-        <h1 class="text-xl font-semibold">Recommendation Letter Generator Bot</h1>
+  <body class="w-full min-h-screen flex flex-col p-3">
+    <main
+      class="w-full bg-gemLight min-h-[calc(100vh-1rem)] max-h-[calc(100vh-1rem)] flex flex-col"
+    >
+      <!-- Header -->
+      <header class="p-2 bg-gemRegular flex gap-5 items-center">
+        <img
+          src="chat-bot.jpg"
+          alt="chatbot image"
+          class="w-10 h-10 rounded-lg"
+        />
+        <p class="text-gemDeep text-lg font-medium">Recomendation Letter Chatbot</p>
+      </header>
+      <!-- Chat Box -->
+      <div class="flex-1 overflow-y-auto">
+        <!-- Chat area -->
+        <div class="p-2 flex flex-col gap-4" id="chat-container"></div>
       </div>
-      <span class="text-sm opacity-75">Your AI Assistant</span>
-    </header>
-
-    <!-- Chat Section -->
-    <main class="flex-1 flex flex-col justify-between relative">
-      <!-- Chat Messages -->
-      <div
-        id="chat-container"
-        class="flex-1 overflow-y-auto p-4 space-y-4"
-        style="scroll-behavior: smooth; max-height: calc(100vh - 160px);"
-      ></div>
-
-      <!-- Input Bar -->
-      <form id="chat-form" class="bg-white p-3 flex gap-2 shadow-lg">
+      <!-- prompt -->
+      <form action="" method="post" class="p-2 h-fit" id="chat-form">
         <textarea
+          name="prompt"
           id="prompt"
-          placeholder="Type your message..."
-          rows="2"
-          class="flex-1 p-2 border rounded-lg focus:ring-gemDeep focus:outline-none resize-none"
+          cols="30"
+          rows="4"
+          class="w-full p-2 rounded-md resize-none focus:outline-none"
+          placeholder="Enter message here..."
         ></textarea>
-        <button
-          type="submit"
-          class="bg-gemDeep text-white px-4 py-2 rounded-lg hover:bg-gemDeep/90 transition"
-        >
+        <button type="submit" class="w-full p-1 bg-gemDeep rounded text-white">
           Send
         </button>
       </form>
     </main>
-
     <script type="module" src="/main.js"></script>
   </body>
 </html>
